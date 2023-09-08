@@ -9,5 +9,4 @@ public class SoapwebservicesApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(SoapwebservicesApplication.class, args);
 	}
-
 }
