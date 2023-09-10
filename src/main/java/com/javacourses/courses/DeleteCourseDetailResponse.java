@@ -23,6 +23,9 @@ import jakarta.xml.bind.annotation.XmlType;
  * &lt;complexType&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="status" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
@@ -31,9 +34,28 @@ import jakarta.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "")
-@XmlRootElement(name = "GetAllCourseDetailRequest")
-public class GetAllCourseDetailRequest {
+@XmlType(name = "", propOrder = {
+    "status"
+})
+@XmlRootElement(name = "DeleteCourseDetailResponse")
+public class DeleteCourseDetailResponse {
 
+    protected int status;
+
+    /**
+     * Gets the value of the status property.
+     * 
+     */
+    public int getStatus() {
+        return status;
+    }
+
+    /**
+     * Sets the value of the status property.
+     * 
+     */
+    public void setStatus(int value) {
+        this.status = value;
+    }
 
 }
