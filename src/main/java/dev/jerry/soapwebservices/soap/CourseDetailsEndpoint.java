@@ -2,6 +2,7 @@ package dev.jerry.soapwebservices.soap;
 
 import com.javacourses.courses.*;
 import dev.jerry.soapwebservices.soap.bean.Course;
+import dev.jerry.soapwebservices.soap.exception.CourseNotFoundException;
 import dev.jerry.soapwebservices.soap.service.CourseDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -26,7 +27,9 @@ public class CourseDetailsEndpoint {
             @RequestPayload
             GetCourseDetailRequest request){
         Course course = service.findById(request.getId());
-
+        if(course==null){
+            throw new CourseNotFoundException("Invalid Course Id "+request.getId());
+        }
         return mapCourseDetails(course);
     }
 
